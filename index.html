@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The One And Only</title>
+    <title>Autoplay Video with Larger Spinner Effect</title>
     <style>
         body {
             margin: 0;
@@ -17,8 +17,8 @@
 
         .spinner-effect {
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 900px; /* Increased width */
+            height: 900px; /* Increased height */
             background: conic-gradient(
                 red,
                 orange,
@@ -41,68 +41,21 @@
             }
         }
 
-        img {
+        video {
             max-width: 70%;
             max-height: 70%;
             position: relative;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             z-index: 1;
-        }
-
-        #video-container {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            display: block;
         }
     </style>
 </head>
 <body>
 
 <div class="spinner-effect"></div>
-<img src="https://raw.githubusercontent.com/surinamus/website/main/1704324096953_ins.jpg" alt="Centered Image">
-
-<div id="video-container">
-    <iframe id="youtube-video" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
-
-<script>
-    // Replace with your YouTube video ID
-    const videoUrl = "https://www.youtube.com/embed/A2Vnh2P9q-8?autoplay=1";
-
-    function playVideo() {
-        const videoContainer = document.getElementById('video-container');
-        const videoFrame = document.getElementById('youtube-video');
-
-        videoFrame.src = videoUrl;
-
-        videoContainer.style.display = 'block';
-
-        // Request fullscreen mode
-        if (videoContainer.requestFullscreen) {
-            videoContainer.requestFullscreen();
-        } else if (videoContainer.mozRequestFullScreen) { /* Firefox */
-            videoContainer.mozRequestFullScreen();
-        } else if (videoContainer.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-            videoContainer.webkitRequestFullscreen();
-        } else if (videoContainer.msRequestFullscreen) { /* IE/Edge */
-            videoContainer.msRequestFullscreen();
-        }
-    }
-
-    // Set a timeout to play the video after 10 seconds
-    setTimeout(playVideo, 4000); // 10000 milliseconds = 10 seconds
-</script>
+<video src="https://github.com/surinamus/web5/raw/main/Lip%20Sync_Dreams%20of%20Savvacado%20ext%20v2_Gen-3%20Alpha%20Turbo..._2024-08-20.mp4%203.mp4" autoplay loop controls></video>
 
 </body>
 </html>
